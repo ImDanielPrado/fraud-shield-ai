@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+
+# Prisma generated files 
+generated/
+
+# Build
+dist/
+
+# Tests
+coverage/
+
+# Editor
+.vscode/
