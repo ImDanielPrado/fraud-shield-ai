@@ -6,6 +6,12 @@ class UserRepository {
       data: userData
     });
   }
+
+  async findByEmail(email) {
+    return prisma.user.findUnique({
+      where: { email }
+    });
+  }
 }
 
 module.exports = new UserRepository();
