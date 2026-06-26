@@ -1,13 +1,15 @@
 const { Router } = require("express");
 const userController = require("../controllers/UserController");
+const authMiddleware = require("../middlewares/authMiddleware");
 
 const router = Router();
 
-router.post("/", (req, res) => userController.create(req, res));
+router.post("/", userController.create.bind(userController));
 
-router.get("/", (req, res) => {
+router.get("/", authMiddleware, (req, res) => {
   return res.json({
-    message: "User routes funcionando"
+    message: "Rota protegida funcionando",
+    user: req.user
   });
 });
 
