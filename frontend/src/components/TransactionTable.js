@@ -1,0 +1,3 @@
+<TransactionTable
+    transactions={transactions}
+/>

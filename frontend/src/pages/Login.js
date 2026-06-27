@@ -1,3 +1,4 @@
+import "../styles/login.css";
 import { useState } from "react";
 import api from "../services/api";
 import { useNavigate } from "react-router-dom";
@@ -28,34 +29,53 @@ export default function Login() {
   }
 
   return (
-    <div style={{ maxWidth: "400px", margin: "50px auto" }}>
-      <h1>Fraud Shield AI</h1>
+  <div className="login-page">
+    <div className="login-card">
+
+      <h1 className="login-title">
+        🛡️ Fraud Shield AI
+      </h1>
+
+      <p className="login-subtitle">
+        Plataforma inteligente para monitoramento e detecção de fraudes.
+      </p>
 
       <form onSubmit={handleLogin}>
+
         <input
+          className="login-input"
           type="email"
-          placeholder="E-mail"
+          placeholder="Digite seu e-mail"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
 
-        <br />
-        <br />
-
         <input
+          className="login-input"
           type="password"
-          placeholder="Senha"
+          placeholder="Digite sua senha"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <br />
+        <button
+          className="login-button"
+          type="submit"
+        >
+          Entrar com segurança
+        </button>
+
+      </form>
+
+      <div className="login-footer">
+        <p>JWT Authentication • Fraud Detection • React + Node.js</p>
+
         <br />
 
-        <button type="submit">
-          Entrar
-        </button>
-      </form>
+        <strong>by Daniel Prado</strong>
+      </div>
+
     </div>
+  </div>
   );
 }
